@@ -1,0 +1,21 @@
+const express = require("express");
+const app = express();
+
+app.listen(3000, () => {
+  console.log("Project is running!");
+})
+
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+})
+
+const Discord = require("discord.js");
+const client = new Discord.Client({intents: ["GUILDS", "GUILD_MESSAGES"]});
+
+client.on("message", message => {
+  if(message.content === "Daily Meme"){
+    message.channel.send("OTQ0OTAwNzM2MTQ2MzYyMzY5.YhIVYg.9najpnwS3m7iREi9Q2E5OxxblgU")
+  }
+})
+
+client.login(process.env.token);
